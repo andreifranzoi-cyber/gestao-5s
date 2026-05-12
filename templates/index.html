@@ -16,6 +16,52 @@
 
         <a href="/nova" class="btn btn-primary">
             Nova Auditoria
+            <div class="row mb-4">
+
+    <div class="col-6 mb-3">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h5>Média Geral</h5>
+                <h2>{{ media }}%</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6 mb-3">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h5>Total</h5>
+                <h2>{{ total }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6 mb-3">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h5>Faltando</h5>
+                <h2>{{ faltando }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6 mb-3">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h5>Melhor Nota</h5>
+                <h2>{{ melhor_nota }}%</h2>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-body text-center">
+        <h4>Medalha Atual</h4>
+        <h2>{{ medalha }}</h2>
+    </div>
+</div>
         </a>
     </div>
 
