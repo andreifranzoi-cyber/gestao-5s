@@ -30,9 +30,17 @@ def index():
     conn = sqlite3.connect('auditorias.db')
     cursor = conn.cursor()
 
-    cursor.execute("SELECT * FROM auditorias ORDER BY id DESC")
-    auditorias = cursor.fetchall()
+    mes = request.args.get("mes")
 
+if mes:
+    cursor.execute(
+        "SELECT * FROM auditorias WHERE data LIKE ?",
+        (f"{mes}%",)
+    )
+else:
+    cursor.execute("SELECT * FROM auditorias")
+
+auditorias = cursor.fetchall()
     # Média geral
     cursor.execute("SELECT AVG(nota) FROM auditorias")
     media = cursor.fetchone()[0]
@@ -81,6 +89,7 @@ def index():
     return render_template(
         'index.html',
         auditorias=auditorias,
+        mes_selecionado=mes,
         media=round(media, 1),
         total=total,
         melhor_nota=melhor_nota,
