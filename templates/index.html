@@ -69,7 +69,16 @@
         <div class="card-body">
 
             <h4 class="mb-3">Histórico de Auditorias</h4>
+<form method="GET" style="margin-bottom:20px;">
+    <input type="month" name="mes"
+           value="{{ mes_selecionado }}"
+           style="padding:8px; font-size:16px;">
 
+    <button type="submit"
+            style="padding:8px 15px; font-size:16px;">
+        Filtrar
+    </button>
+</form>
             <table class="table table-striped">
                 <thead>
                     <tr>
